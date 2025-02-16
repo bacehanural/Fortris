@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "c267211d-f7b4-45c7-a944-fd98bd0e3a87",
+		"name": "Accounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14010938",
+		"_collection_link": "https://blue-desert-421929.postman.co/workspace/Team-Workspace~98ab2e60-a3dc-4e7a-8e2c-3513222d8288/collection/14010938-c267211d-f7b4-45c7-a944-fd98bd0e3a87?action=share&source=collection_link&creator=14010938"
+	},
+	"item": [
+		{
+			"name": "createFirstNonTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Check if 'id' and 'balance' exist in the response",
+							"if (response.id) {",
+							"    pm.environment.set(\"firstNonTreasuryAccountID\", response.id);",
+							"    console.log(\"The First Non-Treasury Account ID stored:\", response.id);",
+							"} else {",
+							"    console.log(\"Error: 'id' not found in the response.\");",
+							"}",
+							"",
+							"if (response.balance) {",
+							"    pm.environment.set(\"firstNonTreasuryAccountBalance\", response.balance);",
+							"    console.log(\"The First Non-Treasury Account Balance stored:\", response.balance);",
+							"} else {",
+							"    console.log(\"Error: 'balance' not found in the response.\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"BurcuFirst NonTreasury\",\n    \"currency\": \"USD\",\n    \"balance\": \"1000\",\n    \"treasury\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createSecondNonTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Check if 'id' and 'balance' exist in the response",
+							"if (response.id) {",
+							"    pm.environment.set(\"secondNonTreasuryAccountID\", response.id);",
+							"    console.log(\"The Second Non-Treasury Account ID stored:\", response.id);",
+							"} else {",
+							"    console.log(\"Error: 'id' not found in the response.\");",
+							"}",
+							"",
+							"if (response.balance) {",
+							"    pm.environment.set(\"secondNonTreasuryAccountBalance\", response.balance);",
+							"    console.log(\"The Second Non-Treasury Account Balance stored:\", response.balance);",
+							"} else {",
+							"    console.log(\"Error: 'balance' not found in the response.\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"BurcuSecond NonTreasury\",\n    \"currency\": \"USD\",\n    \"balance\": \"1000\",\n    \"treasury\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFirstTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Check if 'id' and 'balance' exist in the response",
+							"if (response.id) {",
+							"    pm.environment.set(\"firstTreasuryAccountID\", response.id);",
+							"    console.log(\"The First Treasury Account ID stored:\", response.id);",
+							"} else {",
+							"    console.log(\"Error: 'id' not found in the response.\");",
+							"}",
+							"",
+							"if (response.balance) {",
+							"    pm.environment.set(\"firstTreasuryAccountBalance\", response.balance);",
+							"    console.log(\"The First Treasury Account Balance stored:\", response.balance);",
+							"} else {",
+							"    console.log(\"Error: 'balance' not found in the response.\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"BurcuFirst Treasury\",\n    \"currency\": \"USD\",\n    \"balance\": \"2000\",\n    \"treasury\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createSecondTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Check if 'id' and 'balance' exist in the response",
+							"if (response.id) {",
+							"    pm.environment.set(\"secondTreasuryAccountID\", response.id);",
+							"    console.log(\"The Second Treasury Account ID stored:\", response.id);",
+							"} else {",
+							"    console.log(\"Error: 'id' not found in the response.\");",
+							"}",
+							"",
+							"if (response.balance) {",
+							"    pm.environment.set(\"secondTreasuryAccountBalance\", response.balance);",
+							"    console.log(\"The Second Treasury Account Balance stored:\", response.balance);",
+							"} else {",
+							"    console.log(\"Error: 'balance' not found in the response.\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"BurcuSecond Treasury\",\n    \"currency\": \"USD\",\n    \"balance\": \"2000\",\n    \"treasury\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "displayAllAccounts",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoneyBetweenNonTreasuryAccounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Ensure the transfer was successful or check for insufficient balance error",
+							"if (response.message) {",
+							"    pm.test(\"Transfer should be successful\", function () {",
+							"        pm.expect(response.message).to.eql(\"Transfer successful\");",
+							"    });",
+							"} else if (response.error) {",
+							"    pm.test(\"Transfer should fail if balance is insufficient\", function () {",
+							"        pm.expect(response.error).to.eql(\"Non-Treasury Accounts should block transfers if there is not enough balance.\");",
+							"    });",
+							"}",
+							"",
+							"// Retrieve stored balances from environment variables",
+							"let initialFirstNonTreasuryBalance = pm.environment.get(\"firstNonTreasuryAccountBalance\");",
+							"let initialSecondNonTreasuryBalance = pm.environment.get(\"secondNonTreasuryAccountBalance\");",
+							"",
+							"// Convert values to numbers (fixing Postman’s caching issue)",
+							"initialFirstNonTreasuryBalance = initialFirstNonTreasuryBalance ? parseFloat(initialFirstNonTreasuryBalance) : NaN;",
+							"initialSecondNonTreasuryBalance = initialSecondNonTreasuryBalance ? parseFloat(initialSecondNonTreasuryBalance) : NaN;",
+							"",
+							"// Retrieve transfer amount correctly from the request body",
+							"let requestBody = pm.request.body.raw ? JSON.parse(pm.request.body.raw) : {};",
+							"let transferAmount = requestBody.amount ? parseFloat(requestBody.amount) : NaN;",
+							"",
+							"// Log retrieved values for debugging",
+							"console.log(\"Initial First Non-Treasury Account Balance:\", initialFirstNonTreasuryBalance);",
+							"console.log(\"Initial Second Non-Treasury Account Balance:\", initialSecondNonTreasuryBalance);",
+							"console.log(\"Transfer Amount:\", transferAmount);",
+							"",
+							"// Ensure retrieved values are valid numbers before performing calculations",
+							"pm.test(\"Initial balances and transfer amount should be valid numbers\", function () {",
+							"    pm.expect(isNaN(initialFirstNonTreasuryBalance)).to.eql(false, \"❌ First Non-Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(initialSecondNonTreasuryBalance)).to.eql(false, \"❌ Second Non-Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(transferAmount)).to.eql(false, \"❌ Transfer amount is NaN!\");",
+							"});",
+							"",
+							"// Check if the Non-Treasury account has enough balance for the transfer",
+							"if (initialFirstNonTreasuryBalance < transferAmount) {",
+							"    pm.test(\"Transfer should not proceed due to insufficient funds\", function () {",
+							"        pm.expect(response.error).to.eql(\"Non-Treasury Accounts should block transfers if there is not enough balance.\");",
+							"    });",
+							"",
+							"    // Log the issue",
+							"    console.log(\"❌ Transfer blocked: Insufficient balance in non-treasury account.\");",
+							"} else {",
+							"    // Calculate expected balances after the transfer",
+							"    let newFirstNonTreasuryBalance = initialFirstNonTreasuryBalance - transferAmount;",
+							"    let newSecondNonTreasuryBalance = initialSecondNonTreasuryBalance + transferAmount;",
+							"",
+							"    // Update the environment variables correctly",
+							"    pm.environment.set(\"firstNonTreasuryAccountBalance\", newFirstNonTreasuryBalance.toString());",
+							"    pm.environment.set(\"secondNonTreasuryAccountBalance\", newSecondNonTreasuryBalance.toString());",
+							"",
+							"    // Retrieve updated values from environment to confirm changes",
+							"    let updatedFirstNonTreasuryBalance = parseFloat(pm.environment.get(\"firstNonTreasuryAccountBalance\"));",
+							"    let updatedSecondNonTreasuryBalance = parseFloat(pm.environment.get(\"secondNonTreasuryAccountBalance\"));",
+							"",
+							"    // Verify that balances are updated correctly",
+							"    pm.test(\"First Non-Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedFirstNonTreasuryBalance).to.eql(newFirstNonTreasuryBalance);",
+							"    });",
+							"",
+							"    pm.test(\"Second Non-Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedSecondNonTreasuryBalance).to.eql(newSecondNonTreasuryBalance);",
+							"    });",
+							"",
+							"    // Log updated balances",
+							"    console.log(\"Updated First Non-Treasury Account Balance:\", updatedFirstNonTreasuryBalance);",
+							"    console.log(\"Updated Second Non-Treasury Account Balance:\", updatedSecondNonTreasuryBalance);",
+							"    console.log(\"Environment variables updated successfully!\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"{{firstNonTreasuryAccountID}}\",\n    \"to\": \"{{secondNonTreasuryAccountID}}\",\n    \"amount\": \"500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/transfer",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoneyBetweenTreasuryAccounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Ensure the transfer was successful or check for insufficient balance error",
+							"if (response.message) {",
+							"    pm.test(\"Transfer should be successful\", function () {",
+							"        pm.expect(response.message).to.eql(\"Transfer successful\");",
+							"    });",
+							"}",
+							"",
+							"// Retrieve stored balances from environment variables",
+							"let initialFirstTreasuryBalance = pm.environment.get(\"firstTreasuryAccountBalance\");",
+							"let initialSecondTreasuryBalance = pm.environment.get(\"secondTreasuryAccountBalance\");",
+							"",
+							"// Convert values to numbers (fixing Postman’s caching issue)",
+							"initialFirstTreasuryBalance = initialFirstTreasuryBalance ? parseFloat(initialFirstTreasuryBalance) : NaN;",
+							"initialSecondTreasuryBalance = initialSecondTreasuryBalance ? parseFloat(initialSecondTreasuryBalance) : NaN;",
+							"",
+							"// Retrieve transfer amount correctly from the request body",
+							"let requestBody = pm.request.body.raw ? JSON.parse(pm.request.body.raw) : {};",
+							"let transferAmount = requestBody.amount ? parseFloat(requestBody.amount) : NaN;",
+							"",
+							"// Log retrieved values for debugging",
+							"console.log(\"Initial First Treasury Account Balance:\", initialFirstTreasuryBalance);",
+							"console.log(\"Initial Second Treasury Account Balance:\", initialSecondTreasuryBalance);",
+							"console.log(\"Transfer Amount:\", transferAmount);",
+							"",
+							"// Ensure retrieved values are valid numbers before performing calculations",
+							"pm.test(\"Initial balances and transfer amount should be valid numbers\", function () {",
+							"    pm.expect(isNaN(initialFirstTreasuryBalance)).to.eql(false, \"❌ First Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(initialSecondTreasuryBalance)).to.eql(false, \"❌ Second Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(transferAmount)).to.eql(false, \"❌ Transfer amount is NaN!\");",
+							"});",
+							"    // Calculate expected balances after the transfer",
+							"    let newFirstTreasuryBalance = initialFirstTreasuryBalance - transferAmount; // Treasury accounts can go negative",
+							"    let newSecondTreasuryBalance = initialSecondTreasuryBalance + transferAmount;",
+							"",
+							"    // Update the environment variables correctly",
+							"    pm.environment.set(\"firstTreasuryAccountBalance\", newFirstTreasuryBalance.toString());",
+							"    pm.environment.set(\"secondTreasuryAccountBalance\", newSecondTreasuryBalance.toString());",
+							"",
+							"    // Retrieve updated values from environment to confirm changes",
+							"    let updatedFirstTreasuryBalance = parseFloat(pm.environment.get(\"firstTreasuryAccountBalance\"));",
+							"    let updatedSecondTreasuryBalance = parseFloat(pm.environment.get(\"secondTreasuryAccountBalance\"));",
+							"",
+							"    // Verify that balances are updated correctly",
+							"    pm.test(\"First Treasury Account balance should be updated correctly (can be negative)\", function () {",
+							"        pm.expect(updatedFirstTreasuryBalance).to.eql(newFirstTreasuryBalance);",
+							"    });",
+							"    pm.test(\"Second Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedSecondTreasuryBalance).to.eql(newSecondTreasuryBalance);",
+							"    });",
+							"",
+							"    // Log updated balances",
+							"    console.log(\"Updated First Treasury Account Balance:\", updatedFirstTreasuryBalance);",
+							"    console.log(\"Updated Second Treasury Account Balance:\", updatedSecondTreasuryBalance);",
+							"    console.log(\"Environment variables updated successfully!\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"{{firstTreasuryAccountID}}\",\n    \"to\": \"{{secondTreasuryAccountID}}\",\n    \"amount\": \"500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/transfer",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoneyNonTreasuryAccountTOTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Ensure the transfer was successful or check for insufficient balance error",
+							"if (response.message) {",
+							"    pm.test(\"Transfer should be successful\", function () {",
+							"        pm.expect(response.message).to.eql(\"Transfer successful\");",
+							"    });",
+							"} else if (response.error) {",
+							"    pm.test(\"Transfer should fail if balance is insufficient\", function () {",
+							"        pm.expect(response.error).to.eql(\"Non-Treasury Accounts should block transfers if there is not enough balance.\");",
+							"    });",
+							"}",
+							"",
+							"// Retrieve stored balances from environment variables",
+							"let initialFirstNonTreasuryBalance = pm.environment.get(\"firstNonTreasuryAccountBalance\");",
+							"let initialFirstTreasuryBalance = pm.environment.get(\"firstTreasuryAccountBalance\");",
+							"",
+							"// Convert values to numbers (fixing Postman’s caching issue)",
+							"initialFirstNonTreasuryBalance = initialFirstNonTreasuryBalance ? parseFloat(initialFirstNonTreasuryBalance) : NaN;",
+							"initialFirstTreasuryBalance = initialFirstTreasuryBalance ? parseFloat(initialFirstTreasuryBalance) : NaN;",
+							"",
+							"// Retrieve transfer amount correctly from the request body",
+							"let requestBody = pm.request.body.raw ? JSON.parse(pm.request.body.raw) : {};",
+							"let transferAmount = requestBody.amount ? parseFloat(requestBody.amount) : NaN;",
+							"",
+							"// Log retrieved values for debugging",
+							"console.log(\"Initial First Non-Treasury Account Balance:\", initialFirstNonTreasuryBalance);",
+							"console.log(\"Initial First Treasury Account Balance:\", initialFirstTreasuryBalance);",
+							"console.log(\"Transfer Amount:\", transferAmount);",
+							"",
+							"// Ensure retrieved values are valid numbers before performing calculations",
+							"pm.test(\"Initial balances and transfer amount should be valid numbers\", function () {",
+							"    pm.expect(isNaN(initialFirstNonTreasuryBalance)).to.eql(false, \"❌ First Non-Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(initialFirstTreasuryBalance)).to.eql(false, \"❌ First Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(transferAmount)).to.eql(false, \"❌ Transfer amount is NaN!\");",
+							"});",
+							"",
+							"// Check if the Non-Treasury account has enough balance for the transfer",
+							"if (initialFirstNonTreasuryBalance < transferAmount) {",
+							"    pm.test(\"Transfer should not proceed due to insufficient funds\", function () {",
+							"        pm.expect(response.error).to.eql(\"Non-Treasury Accounts should block transfers if there is not enough balance.\");",
+							"    });",
+							"",
+							"    // Log the issue",
+							"    console.log(\"❌ Transfer blocked: Insufficient balance in non-treasury account.\");",
+							"} else {",
+							"    // Calculate expected balances after the transfer",
+							"    let newFirstNonTreasuryBalance = initialFirstNonTreasuryBalance - transferAmount;",
+							"    let newFirstTreasuryBalance = initialFirstTreasuryBalance + transferAmount;",
+							"",
+							"    // Update the environment variables correctly",
+							"    pm.environment.set(\"firstNonTreasuryAccountBalance\", newFirstNonTreasuryBalance.toString());",
+							"    pm.environment.set(\"firstTreasuryAccountBalance\", newFirstTreasuryBalance.toString());",
+							"",
+							"    // Retrieve updated values from environment to confirm changes",
+							"    let updatedFirstNonTreasuryBalance = parseFloat(pm.environment.get(\"firstNonTreasuryAccountBalance\"));",
+							"    let updatedFirstTreasuryBalance = parseFloat(pm.environment.get(\"firstTreasuryAccountBalance\"));",
+							"",
+							"    // Verify that balances are updated correctly",
+							"    pm.test(\"First Non-Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedFirstNonTreasuryBalance).to.eql(newFirstNonTreasuryBalance);",
+							"    });",
+							"",
+							"    pm.test(\"First Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedFirstTreasuryBalance).to.eql(newFirstTreasuryBalance);",
+							"    });",
+							"",
+							"    // Log updated balances",
+							"    console.log(\"Updated First Non-Treasury Account Balance:\", updatedFirstNonTreasuryBalance);",
+							"    console.log(\"Updated First Treasury Account Balance:\", updatedFirstTreasuryBalance);",
+							"    console.log(\"Environment variables updated successfully!\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"{{firstNonTreasuryAccountID}}\",\n    \"to\": \"{{firstTreasuryAccountID}}\",\n    \"amount\": \"500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/transfer",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoneyTreasuryAccountTONonTreasuryAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON",
+							"let response = pm.response.json();",
+							"",
+							"// Ensure the transfer was successful or check for insufficient balance error",
+							"if (response.message) {",
+							"    pm.test(\"Transfer should be successful\", function () {",
+							"        pm.expect(response.message).to.eql(\"Transfer successful\");",
+							"    });",
+							"} else if (response.error) {",
+							"    pm.test(\"Transfer should fail if balance is insufficient\", function () {",
+							"        pm.expect(response.error).to.eql(\"Non-Treasury Accounts should block transfers if there is not enough balance.\");",
+							"    });",
+							"}",
+							"",
+							"// Retrieve stored balances from environment variables",
+							"let initialSecondTreasuryBalance = pm.environment.get(\"secondTreasuryAccountBalance\");",
+							"let initialSecondNonTreasuryBalance = pm.environment.get(\"secondNonTreasuryAccountBalance\");",
+							"",
+							"// Convert values to numbers (fixing Postman’s caching issue)",
+							"initialSecondTreasuryBalance = initialSecondTreasuryBalance ? parseFloat(initialSecondTreasuryBalance) : NaN;",
+							"initialSecondNonTreasuryBalance = initialSecondNonTreasuryBalance ? parseFloat(initialSecondNonTreasuryBalance) : NaN;",
+							"",
+							"// Retrieve transfer amount correctly from the request body",
+							"let requestBody = pm.request.body.raw ? JSON.parse(pm.request.body.raw) : {};",
+							"let transferAmount = requestBody.amount ? parseFloat(requestBody.amount) : NaN;",
+							"",
+							"// Log retrieved values for debugging",
+							"console.log(\"Initial Second Treasury Account Balance:\", initialSecondTreasuryBalance);",
+							"console.log(\"Initial Second Non-Treasury Account Balance:\", initialSecondNonTreasuryBalance);",
+							"console.log(\"Transfer Amount:\", transferAmount);",
+							"",
+							"// Ensure retrieved values are valid numbers before performing calculations",
+							"pm.test(\"Initial balances and transfer amount should be valid numbers\", function () {",
+							"    pm.expect(isNaN(initialSecondTreasuryBalance)).to.eql(false, \"❌ Second Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(initialSecondNonTreasuryBalance)).to.eql(false, \"❌ Second Non-Treasury Account balance is NaN!\");",
+							"    pm.expect(isNaN(transferAmount)).to.eql(false, \"❌ Transfer amount is NaN!\");",
+							"});",
+							"    // Calculate expected balances after the transfer",
+							"    let newSecondTreasuryBalance = initialSecondTreasuryBalance - transferAmount; // Treasury accounts can go negative",
+							"    let newSecondNonTreasuryBalance = initialSecondNonTreasuryBalance + transferAmount;",
+							"",
+							"    // Update the environment variables correctly",
+							"    pm.environment.set(\"secondTreasuryAccountBalance\", newSecondTreasuryBalance.toString());",
+							"    pm.environment.set(\"secondNonTreasuryAccountBalance\", newSecondNonTreasuryBalance.toString());",
+							"",
+							"    // Retrieve updated values from environment to confirm changes",
+							"    let updatedSecondTreasuryBalance = parseFloat(pm.environment.get(\"secondTreasuryAccountBalance\"));",
+							"    let updatedSecondNonTreasuryBalance = parseFloat(pm.environment.get(\"secondNonTreasuryAccountBalance\"));",
+							"",
+							"    // Verify that balances are updated correctly",
+							"    pm.test(\"Second Treasury Account balance should be updated correctly (can be negative)\", function () {",
+							"        pm.expect(updatedSecondTreasuryBalance).to.eql(newSecondTreasuryBalance);",
+							"    });",
+							"    pm.test(\"Second Non-Treasury Account balance should be updated correctly\", function () {",
+							"        pm.expect(updatedSecondNonTreasuryBalance).to.eql(newSecondNonTreasuryBalance);",
+							"    });",
+							"",
+							"    // Log updated balances",
+							"    console.log(\"Updated Second Treasury Account Balance:\", updatedSecondTreasuryBalance);",
+							"    console.log(\"Updated Second Non-Treasury Account Balance:\", updatedSecondNonTreasuryBalance);",
+							"    console.log(\"Environment variables updated successfully!\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"{{secondTreasuryAccountID}}\",\n    \"to\": \"{{secondNonTreasuryAccountID}}\",\n    \"amount\": \"3500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/transfer",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individualAccountRetrieval",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/{{firstNonTreasuryAccountID}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"{{firstNonTreasuryAccountID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ACCOUNT_BASE_URL}}/{{secondTreasuryAccountID}}",
+					"host": [
+						"{{ACCOUNT_BASE_URL}}"
+					],
+					"path": [
+						"{{secondTreasuryAccountID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "name",
+			"value": ""
+		}
+	]
+}
