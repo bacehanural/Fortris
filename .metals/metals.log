@@ -7036,3 +7036,28 @@ WARNING: Unsupported notification method: metals/windowStateDidChange
 2025.02.16 21:16:20 INFO  shutting down Metals
 2025.02.16 21:16:20 INFO  Shut down connection with build server.
 2025.02.16 21:16:20 INFO  Exiting server
+2025.02.16 21:26:50 INFO  Started: Metals version 1.5.1 in folders '/Users/burcu/Desktop/Fortris/accounts/spark-rest' for client Visual Studio Code 1.97.2.
+2025.02.16 21:26:51 INFO  skipping build import with status 'Installed'
+2025.02.16 21:26:51 INFO  Attempting to connect to the build server...
+2025.02.16 21:26:51 INFO  Found a Bloop server running
+2025.02.16 21:26:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/bsp.trace.json or /Users/burcu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.02.16 21:26:51 INFO  time: Connected to build server in 0.21s
+2025.02.16 21:26:51 INFO  Connected to Build server: Bloop v2.0.8
+Feb 16, 2025 9:26:51 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+SEVERE: Empty build targets. Expected at least one build target identifier. (full report at: /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/.reports/bloop/2025-02-16/r_Empty build targets...._21-26-51-801.md)
+Feb 16, 2025 9:26:51 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+SEVERE: Empty build targets. Expected at least one build target identifier. (full report at: /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/.reports/bloop/2025-02-16/r_Empty build targets...._21-26-51-801.md)
+Feb 16, 2025 9:26:51 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+SEVERE: Empty build targets. Expected at least one build target identifier. (full report at: /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/.reports/bloop/2025-02-16/r_Empty build targets...._21-26-51-801.md)
+Feb 16, 2025 9:26:51 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+SEVERE: Empty build targets. Expected at least one build target identifier. (full report at: /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/.reports/bloop/2025-02-16/r_Empty build targets...._21-26-51-801.md)
+Feb 16, 2025 9:26:51 PM scala.meta.internal.metals.StdReporter $anonfun$create$1
+SEVERE: Empty build targets. Expected at least one build target identifier. (full report at: /Users/burcu/Desktop/Fortris/accounts/spark-rest/.metals/.reports/bloop/2025-02-16/r_Empty build targets...._21-26-51-801.md)
+2025.02.16 21:26:51 INFO  time: Imported build in 0.13s
+2025.02.16 21:26:51 INFO  running doctor check
+2025.02.16 21:26:51 INFO  java targets: 
+2025.02.16 21:26:53 INFO  time: indexed workspace in 1.6s
+2025.02.16 21:27:29 INFO  Shutting down server
+2025.02.16 21:27:29 INFO  shutting down Metals
+2025.02.16 21:27:29 INFO  Shut down connection with build server.
+2025.02.16 21:27:29 INFO  Exiting server
