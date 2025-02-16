@@ -2,9 +2,10 @@
 .DS_Store
 
 # SBT directories
-target/
-project/
-.bsp/
-.idea/
-.vscode/
-.metals/
+spark-rest/target/
+spark-rest/project/
+spark-rest/.bsp/
+spark-rest/.idea/
+spark-rest/.vscode/
+spark-rest/.metals/
+spark-rest/.gitignore
