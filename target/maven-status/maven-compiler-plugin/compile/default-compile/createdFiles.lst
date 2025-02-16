@@ -1,7 +1,0 @@
-com/example/App.class
-com/example/App$SuccessResponse.class
-com/example/App$TransferRequest.class
-com/example/App$AccountRequest.class
-com/example/AccountService.class
-com/example/App$ErrorResponse.class
-com/example/Account.class
