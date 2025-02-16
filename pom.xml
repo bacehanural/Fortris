@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>spark-rest</artifactId>
@@ -7,30 +8,42 @@
   <version>1.0-SNAPSHOT</version>
   <name>spark-rest</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
 
+<repositories>
+  <repository>
+    <id>central</id>
+    <url>https://repo.maven.apache.org/maven2</url>
+  </repository>
+  <repository>
+    <id>gatling</id>
+    <url>https://repo1.maven.org/maven2</url>
+  </repository>
+</repositories>
+
+  <dependencies>
+    <!-- JUnit for Testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
 
-        <!-- Spark Framework -->
+    <!-- Spark Framework -->
     <dependency>
       <groupId>com.sparkjava</groupId>
       <artifactId>spark-core</artifactId>
       <version>2.9.4</version>
     </dependency>
 
-        <!-- GSON for JSON Processing -->
+    <!-- GSON for JSON Processing -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.8.9</version>
     </dependency>
 
-        <!-- SLF4J Binding -->
+    <!-- SLF4J Binding -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
@@ -38,12 +51,66 @@
       <scope>runtime</scope>
     </dependency>
 
-        <!-- Logback for Logging -->
+    <!-- Logback for Logging -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.4.11</version>
     </dependency>
-      
+
+    <!-- Correct Gatling Dependencies -->
+
+    <dependency>
+      <groupId>io.gatling</groupId>
+      <artifactId>gatling-core</artifactId>
+      <version>3.13.4</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.gatling</groupId>
+      <artifactId>gatling-http</artifactId>
+      <version>3.13.4</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.gatling.highcharts</groupId>
+      <artifactId>gatling-charts-highcharts</artifactId>
+      <version>3.13.4</version>
+    </dependency>
+
+    <!-- Correct Scala Version -->
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.13.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>2.13.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-reflect</artifactId>
+      <version>2.13.10</version>
+    </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.gatling</groupId>
+        <artifactId>gatling-maven-plugin</artifactId>
+        <version>3.13.4</version>
+        <configuration>
+          <simulationClass>simulations.AccountLoadTest</simulationClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

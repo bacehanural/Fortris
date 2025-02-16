@@ -8,29 +8,22 @@ class AccountLoadTest extends Simulation {
 
   val httpProtocol = http
     .baseUrl("http://localhost:4567")
-    .acceptHeader("application/json")
-    .contentTypeHeader("application/json")
+    .header("Content-Type", "application/json")
 
-  val accountA = "firstNonTreasuryAccountID"  // Replace with actual ID
-  val accountB = "secondNonTreasuryAccountID" // Replace with actual ID
-
-  val transferScenario = scenario("Account Transfer Load Test")
+  val scn = scenario("Account Load Test")
     .exec(
       http("Transfer Money")
-        .post("/accounts/transfer")
-        .body(StringBody(
-          s"""{
-             "from": "$accountA",
-             "to": "$accountB",
-             "amount": "50"
-          }""")).asJson
+        .post("/accounts/transfer") // 🔹 Update the endpoint if needed
+        .body(StringBody("""{"from": "accountA_ID", "to": "accountB_ID", "amount": "100.00"}"""))
+        .asJson
         .check(status.is(200))
     )
+    .pause(2.seconds)
 
   setUp(
-    transferScenario.inject(
-      rampUsers(10) during (1.minute),  // 1 min ramp-up
-      constantUsersPerSec(10.0 / 60) during (9.minutes) // 10 transactions per min for 9 min
+    scn.inject(
+      rampUsers(10) during (1.minute), // 1 min ramp-up
+      constantUsersPerSec(10.0 / 60) during (9.minutes) // 9 mins at 10 txns/min
     )
   ).protocols(httpProtocol)
 }
